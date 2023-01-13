@@ -1,13 +1,6 @@
-var xnxx = document.querySelectorAll("button").length;
-for (i = 0; i < xnxx; i++) {
-    document.querySelectorAll("button")[i].addEventListener("click", function () {
-        var key= this.innerHTML;
-        makeSound(key);
-        animation(key);
-
-    });
-}
-for (i = 0; i < xnxx; i++) {
+var buttonLength = document.querySelectorAll("button").length;
+for (i = 0; i <  buttonLength ; i++) {
+    console.log(document.querySelector("button"))
     document.querySelectorAll("button")[i].addEventListener("keypress", function(event)
     {
     makeSound(event.key);
@@ -15,6 +8,15 @@ for (i = 0; i < xnxx; i++) {
     }
     );
 }
+for (i = 0; i < buttonLength; i++) {
+    document.querySelectorAll("button")[i].addEventListener("click", function (event) {
+        makeSound(this.innerHTML);
+        animation(this.innerHTML);
+        
+
+    });
+}
+
 function animation(keybutton){
     var active=document.querySelector("."+keybutton);
     active.classList.add("pressed");
